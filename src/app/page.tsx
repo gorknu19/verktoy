@@ -1,11 +1,12 @@
+"use client";
+import NotLoggedInn from "@/components/notLoggedInn.component";
+import { useSession } from "next-auth/react";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <h1>lol</h1>
-      </div>
-    </main>
-  );
+  const { data: session } = useSession();
+
+  if (!session) return <NotLoggedInn />;
+
+  return <main className=""></main>;
 }

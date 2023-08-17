@@ -28,7 +28,11 @@ export const RegisterButton = () => {
 export const LogoutButton = () => {
   return (
     <button
-      onClick={() => signOut()}
+      onClick={() =>
+        signOut({
+          redirect: false,
+        })
+      }
       className={`m-5 text-gray-300 bg-gray-700 hover:bg-gray-800 hover:text-white rounded-md px-3 py-2 text-sm font-medium`}
     >
       Sign out
